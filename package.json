@@ -2,7 +2,8 @@
   "scripts": {
     "build": "next build",
     "start": "next start",
-    "dev": "next dev"
+    "dev": "next dev",
+    "test-build": "tsc"
   },
   "dependencies": {
     "next": "^10.2.3",
