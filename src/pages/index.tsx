@@ -13,7 +13,7 @@ const LinkButton = ({ href, children }: { href: string; children: JSX.Element })
 
 const Home: NextPage = () => {
   return (
-    <Page title="Home" description="Ontdek Argo hier!">
+    <Page title="Home" description="Ontdek en download de Argo app hier!">
       <div>
         <h1 id="home">Argo voor Magister 6</h1>
         <p>
@@ -66,6 +66,19 @@ const Home: NextPage = () => {
           </tbody>
         </table>
 
+        <h2 id="creators">Makers</h2>
+        <ul>
+          <li>
+            <a href="https://samtaen.nl">Sam Taen</a>
+          </li>
+          <li>
+            <a href="https://guusvanmeerveld.dev">Guus van Meerveld</a>
+          </li>
+          <li>
+            <a href="https://mboosterhuis.nl">Martijn Oosterhuis</a>
+          </li>
+        </ul>
+
         <h2 id="building">Zelf bouwen</h2>
 
         <h3>Vereisten</h3>
@@ -91,31 +104,18 @@ const Home: NextPage = () => {
         <pre>
           <code>flutter build</code>
         </pre>
-
-        <h2 id="creators">Makers</h2>
-        <ul>
-          <li>
-            <a href="https://samtaen.nl">Sam Taen</a>
-          </li>
-          <li>
-            <a href="https://guusvanmeerveld.dev">Guus van Meerveld</a>
-          </li>
-          <li>
-            <a href="https://mboosterhuis.nl">Martijn Oosterhuis</a>
-          </li>
-        </ul>
-
-        <h2 id="links">Links</h2>
-        <LinkButton href="https://github.com/argo-client/app">
-          <FaGithub size={25} />
-        </LinkButton>
-        <LinkButton href="https://ko-fi.com/guusvanmeerveld">
-          <FaCoffee size={25} />
-        </LinkButton>
-        <LinkButton href="https://twitter.com/ClientArgo">
-          <FaTwitter size={25} />
-        </LinkButton>
       </div>
+
+      <h2 id="links">Links</h2>
+      <LinkButton href="https://github.com/argo-client/app">
+        <FaGithub size={25} />
+      </LinkButton>
+      <LinkButton href="https://ko-fi.com/guusvanmeerveld">
+        <FaCoffee size={25} />
+      </LinkButton>
+      <LinkButton href="https://twitter.com/ClientArgo">
+        <FaTwitter size={25} />
+      </LinkButton>
     </Page>
   );
 };
