@@ -3,7 +3,8 @@
     "build": "next build",
     "start": "next start",
     "dev": "next dev",
-    "test-build": "tsc"
+    "test-build": "tsc",
+    "export": "next build && next export"
   },
   "dependencies": {
     "next": "^10.2.3",
