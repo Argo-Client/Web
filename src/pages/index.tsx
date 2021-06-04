@@ -66,6 +66,13 @@ const Home: NextPage = () => {
           </tbody>
         </table>
 
+        <h2 id="feedback">Feedback</h2>
+        <p>
+          Wil je een suggestie doen of een probleem melden? Laat het ons weten op onze{" "}
+          <a href="/feedback">feedback pagina</a>! We zullen proberen zo snel mogelijk je bericht te lezen en te
+          verwerken.
+        </p>
+
         <h2 id="creators">Makers</h2>
         <ul>
           <li>
