@@ -6,7 +6,7 @@ import { HiDownload } from "react-icons/hi";
 import APIResponse from "@models/version";
 
 const Versions: FC = () => {
-	const API_BASE = "https://argo-magister.net";
+	const API_BASE = "https://download.argo-magister.net";
 
 	const { data, error } = useSWR<APIResponse>(API_BASE + "/register.json");
 
