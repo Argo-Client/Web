@@ -6,7 +6,7 @@ import { HiDownload } from "react-icons/hi";
 import APIResponse from "@models/version";
 
 const Versions: FC = () => {
-	const API_BASE = "https://download.argo-magister.net";
+	const API_BASE = "https://download.argo-magister.nl";
 
 	const { data, error } = useSWR<APIResponse>(API_BASE + "/register.json");
 
@@ -42,7 +42,11 @@ const Versions: FC = () => {
 								<tr>
 									<td>Ge&uuml;pload</td>
 
-									<td>{new Date(commit.timestamp).toLocaleString()}</td>
+									<td>
+										{new Date(
+											commit.timestamp
+										).toLocaleString()}
+									</td>
 								</tr>
 							</tbody>
 						</table>
