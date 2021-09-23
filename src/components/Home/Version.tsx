@@ -34,7 +34,8 @@ const Versions: FC = () => {
 								<tr>
 									<td>Download</td>
 									<td>
-										<a href={commit.downloadURL}>
+										<a
+											href={`https://download.argo-magister.nl${commit.downloadURL}`}>
 											<HiDownload />
 										</a>
 									</td>
