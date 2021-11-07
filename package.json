@@ -3,11 +3,12 @@
     "build": "next build",
     "start": "next start",
     "dev": "next dev",
-    "test-build": "tsc",
-    "export": "next build && next export"
+    "test-build": "tsc"
   },
   "dependencies": {
-    "next": "^10.2.3",
+    "bootstrap": "^5.0.2",
+    "next": "^12.0.3",
+    "next-i18next": "^8.9.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-google-recaptcha": "^2.1.0",
