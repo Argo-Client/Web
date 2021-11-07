@@ -1,12 +1,17 @@
 import Page from "@components/Page";
 import { NextPage } from "next";
 
+import Link from "next/link";
+
 const NotFound: NextPage = () => (
-  <Page title="Pagina niet gevonden" description="De pagina is verwijderd of verplaatst">
+  <Page
+    title="Pagina niet gevonden"
+    description="De pagina is verwijderd of verplaatst"
+  >
     <div>
       <h1>Pagina niet gevonden</h1>
       <h2>De pagina is verwijderd of verplaatst</h2>
-      <a href="/">Ga terug</a>
+      <Link href="/">Ga terug</Link>
     </div>
   </Page>
 );
