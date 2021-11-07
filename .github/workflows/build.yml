@@ -14,10 +14,10 @@ jobs:
       - name: Setup NodeJS v12
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 12.22.0
       - name: Install all dependencies
         run: yarn install
-      - name: Check Typescript
-        run: yarn test-build
+      - name: Check for errors
+        run: yarn build
       # - name: ESlint check
       #   run: yarn lint
