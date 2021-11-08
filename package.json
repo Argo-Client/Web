@@ -3,8 +3,7 @@
     "build": "next build",
     "lint": "next lint",
     "start": "next start",
-    "dev": "next dev",
-    "test-build": "tsc"
+    "dev": "next dev"
   },
   "dependencies": {
     "bootstrap": "^5.0.2",

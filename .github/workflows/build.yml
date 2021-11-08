@@ -21,6 +21,9 @@ jobs:
       - name: Install all dependencies
         run: yarn install
 
+      - name: Check for ESlint errors
+        run: yarn lint
+
       - name: Check for errors
         run: yarn build
 

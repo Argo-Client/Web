@@ -24,8 +24,8 @@ const Home: NextPage = () => {
             <div className="col-sm-6">
               <div className={styles.header}>
                 <Image
-                  width={75}
-                  height={75}
+                  width={100}
+                  height={100}
                   src="/assets/images/logo.png"
                   alt=""
                 />
