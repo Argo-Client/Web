@@ -16,7 +16,8 @@ COPY --from=deps /app/node_modules ./node_modules
 
 ENV NEXT_TELEMETRY_DISABLED 1;
 
-RUN yarn build && yarn install --production --ignore-scripts --prefer-offline
+RUN yarn build
+RUN yarn install --production --ignore-scripts --prefer-offline
 
 # Runner
 FROM $BASE_IMAGE AS runner
