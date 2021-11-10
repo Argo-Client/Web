@@ -1,85 +1,81 @@
 /* eslint-disable @next/next/no-img-element */
-import { NextPage } from "next";
+import AppleStore from "@images/app-store.png";
+import Phone from "@images/phone.png";
+import GoogleStore from "@images/play-store.png";
 
+import { NextPage } from "next";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Image from "next/image";
 import Link from "next/link";
+
+import { APP_STORE_LINK, PLAY_STORE_LINK } from "@src/app.config";
+import { Logo } from "@src/svg";
 
 import Page from "@components/Page";
 
-import AppleStore from "@images/app-store.png";
-import GoogleStore from "@images/play-store.png";
-import Phone from "@images/phone.png";
-
-import { Logo } from "@src/svg";
-
-import Image from "next/image";
-
 import styles from "./Index.module.scss";
 
-import { APP_STORE_LINK, PLAY_STORE_LINK } from "@src/app.config";
-
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
-
 const Home: NextPage = () => {
-  const { t } = useTranslation("common");
+	const { t } = useTranslation("common");
 
-  const SCALE_PHONE = 1.15;
+	const SCALE_PHONE = 1.15;
 
-  return (
-    <Page title={t("home")} description={t("description")}>
-      <div className={styles.landing}>
-        <div className="container">
-          <div className="row">
-            <div className={"col-lg " + styles.lead}>
-              <Logo height={100} width={100} className={styles.logo} />
-              <h1 className={styles.title}>{t("title")}</h1>
+	return (
+		<Page title={t("home")} description={t("description")}>
+			<div className={styles.landing}>
+				<div className="container">
+					<div className="row">
+						<div className={"col-lg " + styles.lead}>
+							<Logo height={100} width={100} className={styles.logo} />
+							<h1 className={styles.title}>{t("title")}</h1>
 
-              <p className={styles.description}>{t("description")}</p>
+							<p className={styles.description}>{t("description")}</p>
 
-              <div className={styles.download}>
-                <Link href={PLAY_STORE_LINK}>
-                  <a>
-                    <Image {...GoogleStore} width={192} height={57} alt="" />
-                  </a>
-                </Link>
+							<div className={styles.download}>
+								<Link href={PLAY_STORE_LINK}>
+									<a>
+										<Image {...GoogleStore} width={192} height={57} alt="" />
+									</a>
+								</Link>
 
-                <Link href={APP_STORE_LINK}>
-                  <a>
-                    <Image {...AppleStore} width={192} height={57} alt="" />
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div className={"col-lg " + styles.phone}>
-              <img
-                src={Phone.src}
-                className={styles.phoneFrame}
-                width={384 * SCALE_PHONE}
-                height={480 * SCALE_PHONE}
-                alt="phone"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+								<Link href={APP_STORE_LINK}>
+									<a>
+										<Image {...AppleStore} width={192} height={57} alt="" />
+									</a>
+								</Link>
+							</div>
+						</div>
+						<div className={"col-lg " + styles.phone}>
+							<img
+								src={Phone.src}
+								className={styles.phoneFrame}
+								width={384 * SCALE_PHONE}
+								height={480 * SCALE_PHONE}
+								alt="phone"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
 
-      <div className={styles.features}>
-        <div className="container">
-          <div className="row">
-            <div className="col">{/* <h1>{t("")}</h1> */}</div>
-          </div>
-        </div>
-      </div>
-    </Page>
-  );
+			<div className={styles.features}>
+				<div className="container">
+					<div className="row">
+						<div className="col">{/* <h1>{t("")}</h1> */}</div>
+					</div>
+				</div>
+			</div>
+		</Page>
+	);
 };
 
 export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
-  };
+	return {
+		props: {
+			...(await serverSideTranslations(locale, ["common"])),
+		},
+	};
 }
 
 export default Home;

@@ -1,52 +1,52 @@
 .landing {
-  padding-top: 5rem;
+	padding-top: 5rem;
 }
 
 .lead {
-  padding-bottom: 10rem;
+	padding-bottom: 10rem;
 
-  @media screen and (max-width: 992px) {
-    padding-bottom: 3rem;
+	@media screen and (max-width: 992px) {
+		padding-bottom: 3rem;
 
-    text-align: center;
-  }
+		text-align: center;
+	}
 }
 
 .logo {
-  border-radius: 50%;
-  width: 7.5rem;
+	border-radius: 50%;
+	width: 7.5rem;
 }
 
 .title {
-  font-size: 5vh;
+	font-size: 5vh;
 }
 
 .description {
-  font-size: 1.25rem;
+	font-size: 1.25rem;
 }
 
 .download {
-  a {
-    margin-right: 1.5rem;
-  }
+	a {
+		margin-right: 1.5rem;
+	}
 
-  @media screen and (max-width: 450px) {
-    display: flex;
+	@media screen and (max-width: 450px) {
+		display: flex;
 
-    justify-content: center;
-  }
+		justify-content: center;
+	}
 }
 
 .phone {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
 }
 
 .features {
-  background-color: var(--bg-secondary);
+	background-color: var(--bg-secondary);
 
-  padding: 15rem 0;
+	padding: 15rem 0;
 
-  text-align: center;
+	text-align: center;
 }
