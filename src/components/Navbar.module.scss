@@ -11,5 +11,20 @@
 .header {
   flex: 1;
 
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+
+  font-size: 1.25rem;
+
+  h1 {
+    display: inline-block;
+
+    margin: 0;
+
+    margin-left: 1.5rem;
+  }
+}
+
+.logo {
+  border-radius: 50%;
 }

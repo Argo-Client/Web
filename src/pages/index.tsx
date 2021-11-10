@@ -1,8 +1,15 @@
+/* eslint-disable @next/next/no-img-element */
 import { NextPage } from "next";
 
 import Link from "next/link";
 
 import Page from "@components/Page";
+
+import AppleStore from "@images/app-store.png";
+import GoogleStore from "@images/play-store.png";
+import Phone from "@images/phone.png";
+
+import { Logo } from "@src/svg";
 
 import Image from "next/image";
 
@@ -16,52 +23,53 @@ import { useTranslation } from "next-i18next";
 const Home: NextPage = () => {
   const { t } = useTranslation("common");
 
+  const SCALE_PHONE = 1.15;
+
   return (
-    <Page title="Home" description="Ontdek en download de Argo app hier!">
-      <div className="container">
-        <div className={styles.landing}>
+    <Page title={t("home")} description={t("description")}>
+      <div className={styles.landing}>
+        <div className="container">
           <div className="row">
-            <div className="col-sm-6">
-              <div className={styles.header}>
-                <Image
-                  width={100}
-                  height={100}
-                  src="/assets/images/logo.png"
-                  alt=""
-                />
-                <h1>{t("title")}</h1>
-              </div>
+            <div className={"col-lg " + styles.lead}>
+              <Logo height={100} width={100} className={styles.logo} />
+              <h1 className={styles.title}>{t("title")}</h1>
+
+              <p className={styles.description}>{t("description")}</p>
 
               <div className={styles.download}>
                 <Link href={PLAY_STORE_LINK}>
                   <a>
-                    <Image
-                      width={235}
-                      height={70}
-                      src="/assets/images/play-store.png"
-                      alt=""
-                    />
+                    <Image {...GoogleStore} width={192} height={57} alt="" />
                   </a>
                 </Link>
 
                 <Link href={APP_STORE_LINK}>
                   <a>
-                    <Image
-                      src="/assets/images/app-store.png"
-                      width={235}
-                      height={70}
-                      alt=""
-                    />
+                    <Image {...AppleStore} width={192} height={57} alt="" />
                   </a>
                 </Link>
               </div>
             </div>
-            <div className="col-sm-6"></div>
+            <div className={"col-lg " + styles.phone}>
+              <img
+                src={Phone.src}
+                className={styles.phoneFrame}
+                width={384 * SCALE_PHONE}
+                height={480 * SCALE_PHONE}
+                alt="phone"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      <div className={styles.features}></div>
+      <div className={styles.features}>
+        <div className="container">
+          <div className="row">
+            <div className="col">{/* <h1>{t("")}</h1> */}</div>
+          </div>
+        </div>
+      </div>
     </Page>
   );
 };

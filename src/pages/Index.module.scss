@@ -1,34 +1,52 @@
 .landing {
   padding-top: 5rem;
-  padding-bottom: 15rem;
 }
 
-.header {
-  padding: 5rem 0;
+.lead {
+  padding-bottom: 10rem;
 
+  @media screen and (max-width: 992px) {
+    padding-bottom: 3rem;
+
+    text-align: center;
+  }
+}
+
+.logo {
+  border-radius: 50%;
+  width: 7.5rem;
+}
+
+.title {
+  font-size: 5vh;
+}
+
+.description {
+  font-size: 1.25rem;
+}
+
+.download {
+  a {
+    margin-right: 1.5rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    display: flex;
+
+    justify-content: center;
+  }
+}
+
+.phone {
   display: flex;
-  align-items: center;
-
-  img {
-    border-radius: 50%;
-    width: 7.5rem;
-  }
-
-  h1 {
-    margin-left: 2.5rem;
-
-    font-size: 3rem;
-
-    display: inline;
-  }
-}
-
-.download a {
-  margin-right: 3rem;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .features {
   background-color: var(--bg-secondary);
 
-  padding: 15rem;
+  padding: 15rem 0;
+
+  text-align: center;
 }
