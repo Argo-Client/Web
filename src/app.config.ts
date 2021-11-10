@@ -4,3 +4,6 @@ export const PLAY_STORE_LINK =
 
 export const APP_STORE_LINK =
 	process.env.NEXT_PUBLIC_APP_STORE_LINK ?? "https://apple.com";
+
+export const REGISTER_URL =
+	process.env.NEXT_PUBLIC_REGISTER_URL ?? "https://download.argo-magister.nl";

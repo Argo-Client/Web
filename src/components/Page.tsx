@@ -11,7 +11,7 @@ const Page: FC<{
 }> = ({ title, description, children }) => (
 	<>
 		<Head>
-			<title>Argo | {title}</title>
+			<title>Argo - {title}</title>
 			<meta property="og:title" content={title} />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content="https://argo-magister.net" />

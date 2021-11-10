@@ -1,0 +1,47 @@
+.download {
+	background-color: var(--bg-secondary);
+
+	margin: 1.5rem 0;
+	padding: 1rem;
+
+	border-radius: 5px;
+
+	text-align: left;
+}
+
+.header {
+	font-size: 1.25rem;
+
+	display: flex;
+}
+
+.title {
+	flex: 1;
+}
+
+.timestamp {
+	color: var(--text-secondary);
+}
+
+.downloadIcon {
+	margin-right: 0.5rem;
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+}
+
+.authorContainer {
+	display: flex;
+	align-items: center;
+
+	p {
+		margin: 0;
+		margin-left: 0.5rem;
+	}
+}
+
+.author {
+	border-radius: 50%;
+}
