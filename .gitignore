@@ -5,6 +5,6 @@ out
 
 yarn-error.log
 
-.cache
+cache
 
 /docker-compose.yml

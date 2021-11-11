@@ -3,7 +3,7 @@ import AppleStore from "@images/app-store.png";
 import Phone from "@images/phone.png";
 import GoogleStore from "@images/play-store.png";
 
-import { InferGetStaticPropsType } from "next";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
@@ -11,6 +11,7 @@ import Link from "next/link";
 
 import {
 	APP_STORE_LINK,
+	CACHE_TIMEOUT,
 	COMMIT_PAGE_LENGTH,
 	PLAY_STORE_LINK,
 } from "@src/app.config";
@@ -79,7 +80,7 @@ const Home = ({
 	);
 };
 
-export const getStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
 	const [commits, length] = await fetchCommits(0, COMMIT_PAGE_LENGTH);
 
 	return {
@@ -92,6 +93,7 @@ export const getStaticProps = async ({ locale }) => {
 			commits,
 			length,
 		},
+		revalidate: CACHE_TIMEOUT / 1000,
 	};
 };
 
