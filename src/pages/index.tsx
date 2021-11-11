@@ -9,14 +9,14 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
 import Link from "next/link";
 
-import axios from "axios";
-
-import { SWRConfig } from "swr";
-
-import { APP_STORE_LINK, REGISTER_URL, PLAY_STORE_LINK } from "@src/app.config";
+import {
+	APP_STORE_LINK,
+	COMMIT_PAGE_LENGTH,
+	PLAY_STORE_LINK,
+} from "@src/app.config";
 import { Logo } from "@src/svg";
 
-import { RegisterResponse } from "@interfaces/register";
+import fetchCommits from "@utils/commits";
 
 import Downloads from "@components/Downloads";
 import Features from "@components/Features";
@@ -24,7 +24,10 @@ import Page from "@components/Page";
 
 import styles from "./Index.module.scss";
 
-const Home = ({ fallback }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({
+	commits,
+	length,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
 	const { t } = useTranslation("common");
 
 	const SCALE_PHONE = 1;
@@ -71,19 +74,13 @@ const Home = ({ fallback }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 			<Features />
 
-			<SWRConfig value={{ fallback }}>
-				<Downloads />
-			</SWRConfig>
+			<Downloads commits={commits} length={length} />
 		</Page>
 	);
 };
 
 export const getStaticProps = async ({ locale }) => {
-	const url = `${REGISTER_URL}/register.json`;
-
-	const data = await axios.get<RegisterResponse>(url).then(({ data }) => data);
-
-	data.files = data.files.reverse().slice(0, 5);
+	const [commits, length] = await fetchCommits(0, COMMIT_PAGE_LENGTH);
 
 	return {
 		props: {
@@ -92,9 +89,8 @@ export const getStaticProps = async ({ locale }) => {
 				"features",
 				"downloads",
 			])),
-			fallback: {
-				[url]: data,
-			},
+			commits,
+			length,
 		},
 	};
 };

@@ -9,3 +9,5 @@ export const REGISTER_URL =
 	process.env.NEXT_PUBLIC_REGISTER_URL ?? "https://download.argo-magister.nl";
 
 export const APP_REPO = process.env.NEXT_PUBLIC_APP_REPO ?? "Argo-Client/App";
+
+export const COMMIT_PAGE_LENGTH = 5;

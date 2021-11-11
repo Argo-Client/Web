@@ -3,3 +3,35 @@
 
 	text-align: center;
 }
+
+.buttons {
+	display: flex;
+	justify-content: center;
+
+	button {
+		margin: 0 0.5vw;
+	}
+}
+
+.spinner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	height: 100vh;
+}
+
+.paginator {
+	background: 0;
+	border: 0;
+
+	color: var(--secondary);
+
+	cursor: pointer;
+}
+
+.selectedPaginator {
+	color: var(--primary);
+
+	text-decoration: underline;
+}
