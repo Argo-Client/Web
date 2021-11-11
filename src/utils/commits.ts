@@ -14,11 +14,7 @@ const fetchCommits = async (
 
 	let data = await Cache.get<RegisterResponse & { expires: number }>("commits");
 
-	console.log("cached");
-
 	if (!data || data.expires < Date.now()) {
-		console.log("not cached");
-
 		data = await axios
 			.get<RegisterResponse>(`${REGISTER_URL}/register.json`)
 			.then(async ({ data }) => {
