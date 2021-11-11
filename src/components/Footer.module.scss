@@ -1,0 +1,28 @@
+.footer {
+	padding: 3rem 0;
+
+	background-color: var(--bg-secondary);
+}
+
+.title {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	margin-right: 1rem;
+}
+
+.list {
+	list-style: none;
+
+	padding: 0;
+
+	h3 {
+		color: var(--text-secondary);
+	}
+
+	li {
+		margin: 0.5rem 0;
+	}
+}

@@ -23,7 +23,7 @@
 	color: var(--text-secondary);
 }
 
-.downloadIcon {
+.downloadButton {
 	margin-right: 0.5rem;
 }
 
@@ -32,9 +32,18 @@
 	justify-content: space-between;
 }
 
+.buttons {
+	display: flex;
+	align-items: center;
+}
+
 .authorContainer {
 	display: flex;
 	align-items: center;
+
+	color: var(--text);
+
+	text-decoration: none;
 
 	p {
 		margin: 0;

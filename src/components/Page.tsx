@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import { FC } from "react";
 
+import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
 
 const Page: FC<{
@@ -30,6 +31,7 @@ const Page: FC<{
 		</Head>
 		<Navbar />
 		{children}
+		<Footer />
 	</>
 );
 export default Page;

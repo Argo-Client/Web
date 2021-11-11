@@ -5,9 +5,14 @@ import styles from "./Button.module.scss";
 const Button: FC<{
 	onClick?: MouseEventHandler<HTMLButtonElement>;
 	title?: string;
-}> = ({ children, onClick, title }) => {
+	className?: string;
+}> = ({ children, onClick, title, className }) => {
 	return (
-		<button onClick={onClick} title={title} className={styles.button}>
+		<button
+			onClick={onClick}
+			title={title}
+			className={`${styles.button} ${className}`.trim()}
+		>
 			{children}
 		</button>
 	);

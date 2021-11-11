@@ -56,11 +56,12 @@ const Home = ({ fallback }: InferGetStaticPropsType<typeof getStaticProps>) => {
 							</div>
 						</div>
 						<div className={"col-lg " + styles.phone}>
-							<img
-								src={Phone.src}
+							<Image
+								{...Phone}
 								className={styles.phoneFrame}
 								width={384 * SCALE_PHONE}
 								height={480 * SCALE_PHONE}
+								quality={100}
 								alt="phone"
 							/>
 						</div>
