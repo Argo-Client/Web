@@ -1,4 +1,13 @@
 {
+	"homepage": "https://argo-magister.nl",
+	"author": {
+		"name": "Guus van Meerveld",
+		"url": "https://guusvanmeerveld.dev"
+	},
+	"files": [
+		"src",
+		"public"
+	],
 	"scripts": {
 		"build": "next build",
 		"lint": "next lint",

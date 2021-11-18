@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { FC } from "react";
 
-import { APP_REPO } from "@src/app.config";
+import { APP_REPO, TWITTER } from "@src/app.config";
 import build from "@src/build.json";
 import { Logo } from "@src/svg";
 
@@ -49,7 +49,7 @@ const Footer: FC = () => {
 								</Link>
 							</li>
 							<li>
-								<Link href={"https://twitter.com/ClientArgo"}>
+								<Link href={TWITTER}>
 									<a>Twitter</a>
 								</Link>
 							</li>

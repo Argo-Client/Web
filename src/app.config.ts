@@ -12,6 +12,9 @@ export const REGISTER_URL =
 
 export const APP_REPO = process.env.NEXT_PUBLIC_APP_REPO ?? "Argo-Client/App";
 
+export const TWITTER =
+	process.env.NEXT_PUBLIC_TWITTER ?? "https://twitter.com/ClientArgo";
+
 export const COMMIT_PAGE_LENGTH = 5;
 
 export const CACHE_LOCATION =
