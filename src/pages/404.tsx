@@ -5,12 +5,14 @@ import Link from "next/link";
 
 import Page from "@components/Page";
 
+import styles from "./404.module.scss";
+
 const NotFound: NextPage = () => {
 	const { t } = useTranslation("404");
 
 	return (
 		<Page title={t("title")} description={t("description")}>
-			<div className="container">
+			<div className={"container " + styles.container}>
 				<h1>{t("title")}</h1>
 				<h2>{t("description")}</h2>
 				<Link href="/">{t("goBack")}</Link>

@@ -2,5 +2,7 @@
 	"title": "Downloads",
 	"github": "Bekijk op Github",
 	"previous": "Vorige",
-	"next": "Volgende"
+	"next": "Volgende",
+	"building": "Apk bouwen...",
+	"failed": "Apk bouwen mislukt"
 }

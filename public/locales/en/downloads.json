@@ -2,5 +2,7 @@
 	"title": "Downloads",
 	"github": "View on Github",
 	"previous": "Previous",
-	"next": "Next"
+	"next": "Next",
+	"building": "Building apk...",
+	"failed": "Failed to build apk"
 }

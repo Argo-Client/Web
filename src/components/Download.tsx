@@ -4,9 +4,10 @@ import Link from "next/link";
 
 import { FC } from "react";
 
-import { FiDownload } from "react-icons/fi";
+import { FiDownload, FiSlash } from "react-icons/fi";
+import Spinner from "react-spinners/ScaleLoader";
 
-import { APP_REPO, COMMIT_URL } from "@src/app.config";
+import { APP_REPO } from "@src/app.config";
 
 import { Commit } from "@models/version";
 
@@ -44,14 +45,40 @@ const Download: FC<{ commit: Commit }> = ({ commit }) => {
 
 					<div className={styles.info}>
 						<div className={styles.buttons}>
-							<Link href={commit.download}>
-								<a>
-									<Button className={styles.downloadButton} title={commit.id}>
-										<FiDownload className={styles.downloadButton} />
-										Download
-									</Button>
-								</a>
-							</Link>
+							{commit.pending && (
+								<Button className={styles.downloadButton}>
+									<span className={styles.downloadButton}>
+										<Spinner
+											color="#fff"
+											width={3}
+											margin={1.5}
+											height={15}
+											radius={5}
+										/>
+									</span>
+									{t("building")}
+								</Button>
+							)}
+							{!commit.pending && commit.success && (
+								<Link href={commit.download}>
+									<a>
+										<Button className={styles.downloadButton} title={commit.id}>
+											<FiDownload className={styles.downloadButton} />
+											Download
+										</Button>
+									</a>
+								</Link>
+							)}
+							{!commit.pending && !commit.success && (
+								<Button
+									className={styles.downloadButton + " " + styles.failed}
+									title={commit.id}
+								>
+									<FiSlash className={styles.downloadButton} />
+
+									{t("failed")}
+								</Button>
+							)}
 
 							<Link href={`https://github.com/${APP_REPO}/commit/${commit.id}`}>
 								<a>{t("github")}</a>
