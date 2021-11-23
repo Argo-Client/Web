@@ -1,12 +1,12 @@
-export default interface APIResponse {
-	files: Commit[];
-}
-
 export interface Commit {
-	commitMessage: string;
-	downloadURL: string;
-	commitID: string;
-	success: boolean;
-	author: string;
+	message: string;
+	id: string;
+	pending: boolean;
+	author: {
+		username: string;
+		avatar: string;
+	};
 	timestamp: string;
+	download?: string;
+	success?: boolean;
 }

@@ -7,8 +7,9 @@ export const PLAY_STORE_LINK =
 export const APP_STORE_LINK =
 	process.env.NEXT_PUBLIC_APP_STORE_LINK ?? "https://apple.com";
 
-export const REGISTER_URL =
-	process.env.NEXT_PUBLIC_REGISTER_URL ?? "https://download.argo-magister.nl";
+export const COMMIT_URL =
+	process.env.NEXT_PUBLIC_COMMIT_URL ??
+	"https://api.argo-magister.nl/v1/commits";
 
 export const APP_REPO = process.env.NEXT_PUBLIC_APP_REPO ?? "Argo-Client/App";
 

@@ -1,29 +1,31 @@
-/* eslint-disable @next/next/no-img-element */
-import AppleStore from "@images/app-store.png";
-import Phone from "@images/phone.png";
-import GoogleStore from "@images/play-store.png";
-
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
 import Link from "next/link";
 
+import axios from "axios";
+
 import {
 	APP_STORE_LINK,
 	CACHE_TIMEOUT,
 	COMMIT_PAGE_LENGTH,
+	COMMIT_URL,
 	PLAY_STORE_LINK,
 } from "@src/app.config";
 import { Logo } from "@src/svg";
 
-import fetchCommits from "@utils/commits";
+import { Commit } from "@models/version";
 
 import Downloads from "@components/Downloads";
 import Features from "@components/Features";
 import Page from "@components/Page";
 
 import styles from "./Index.module.scss";
+
+import AppleStore from "@images/app-store.png";
+import Phone from "@images/phone.png";
+import GoogleStore from "@images/play-store.png";
 
 const Home = ({
 	commits,
@@ -81,7 +83,9 @@ const Home = ({
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-	const [commits, length] = await fetchCommits(0, COMMIT_PAGE_LENGTH);
+	const { data: commits, headers } = await axios.get<Commit[]>(COMMIT_URL);
+
+	const length = headers["x-total-commits"];
 
 	return {
 		props: {

@@ -9,9 +9,9 @@ import axios from "axios";
 
 import useSWRInfinite from "swr/infinite";
 
-import { COMMIT_PAGE_LENGTH } from "@src/app.config";
+import { COMMIT_PAGE_LENGTH, COMMIT_URL } from "@src/app.config";
 
-import Register from "@interfaces/register";
+import { Commit } from "@models/version";
 
 import Button from "@components/Button";
 import Download from "@components/Download";
@@ -23,10 +23,10 @@ const fetcher = (args) => axios.get(args).then(({ data }) => data);
 const getKey = (pageIndex, previousPageData) => {
 	if (previousPageData && !previousPageData.length) return null;
 
-	return `/api/commits?page=${pageIndex}&limit=${COMMIT_PAGE_LENGTH}`;
+	return `${COMMIT_URL}/?page=${pageIndex}&limit=${COMMIT_PAGE_LENGTH}`;
 };
 
-const Downloads: FC<{ commits: Register[]; length: number }> = ({
+const Downloads: FC<{ commits: Commit[]; length: number }> = ({
 	commits,
 	length,
 }) => {
@@ -77,8 +77,8 @@ const Downloads: FC<{ commits: Register[]; length: number }> = ({
 
 				{commits && (
 					<>
-						{commits.map((file) => (
-							<Download key={file.artifactID} file={file} />
+						{commits.map((commit) => (
+							<Download key={commit.id} commit={commit} />
 						))}
 					</>
 				)}
